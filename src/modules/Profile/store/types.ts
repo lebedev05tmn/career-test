@@ -2,6 +2,6 @@ export type TCompletedTestState = {
     count: number;
 };
 
-export type TCompedTestActions = {
+export type TCompletedTestActions = {
     incrementCounter: () => void;
 };

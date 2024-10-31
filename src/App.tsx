@@ -4,11 +4,12 @@ import {
     ConfigProvider,
     SplitCol,
     SplitLayout,
-} from "@vkontakte/vkui";
-import { FC } from "react";
-import "@vkontakte/vkui/dist/vkui.css";
-import Router from "./pages";
-import { RouterProvider } from "./pages/components";
+} from '@vkontakte/vkui';
+import type { FC } from 'react';
+import Router from './pages';
+import { RouterProvider } from './pages/components';
+
+import '@vkontakte/vkui/dist/vkui.css';
 
 const App: FC = () => {
     return (

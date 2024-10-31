@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { TPreviewCard } from "./types";
+import type { FC } from "react";
+import type { TPreviewCard } from "./types";
 import { Avatar, Card } from "@vkontakte/vkui";
 import Button from "../../ui/Button";
 

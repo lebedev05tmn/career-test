@@ -1,6 +1,6 @@
 import { PanelHeader } from "@vkontakte/vkui";
-import { FC } from "react";
-import { THeader } from "./types";
+import type { FC } from "react";
+import type { THeader } from "./types";
 
 const Header: FC<THeader> = ({ title }) => {
     return (

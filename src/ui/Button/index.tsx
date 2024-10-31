@@ -1,6 +1,6 @@
 import { Button as VKButton } from "@vkontakte/vkui";
-import { FC, PropsWithChildren } from "react";
-import { IButton } from "./types";
+import type { FC, PropsWithChildren } from "react";
+import type { IButton } from "./types";
 
 const Button: FC<PropsWithChildren<IButton>> = ({
     active,

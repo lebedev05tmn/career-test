@@ -1,5 +1,5 @@
-import { FC } from "react";
-import PreviewCard from "../../../components/PreviewCard";
+import type { FC } from 'react';
+import PreviewCard from '../../../components/PreviewCard';
 
 const TestPreview: FC = () => {
     return (
@@ -12,7 +12,7 @@ const TestPreview: FC = () => {
                 профориентации от
                 <br /> психолога Е. А.
                 Климова"
-                action={() => console.log("hello")}
+                action={() => console.log('hello')}
                 buttonTitle="Пройти"
             />
             <PreviewCard
@@ -24,7 +24,7 @@ const TestPreview: FC = () => {
                 подростков-
                 <br />
                 старшеклассников"
-                action={() => console.log("hello")}
+                action={() => console.log('hello')}
                 buttonTitle="Пройти"
             />
         </div>
