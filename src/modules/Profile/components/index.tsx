@@ -1,18 +1,17 @@
 import { Avatar } from '@vkontakte/vkui';
-import type { FC } from 'react';
-import { useComletedTestStore } from '../store';
+import { type FC } from 'react';
+import { useComletedTestStore, useUserStore } from '../store';
 
 const Profile: FC = () => {
     const completedTestCount = useComletedTestStore((state) => state.count);
 
+    const profile = useUserStore((state) => state.profile);
+
     return (
-        <section className="flex h-[150px] items-center ml-9">
-            <Avatar
-                size={96}
-                src="https://sun9-60.userapi.com/impg/_BA5Hhp-jsOglYIO_AKf96_NVPjdZY5GKF6LkQ/MBN1Y6UTGUY.jpg?size=1620x2160&quality=95&sign=cf19c0ed1088ddf8b73e5023866d5ecf&type=album"
-            />
+        <section className="flex h-[150px] items-center pl-9 bg-[#19191a]">
+            <Avatar size={96} src={profile?.img} />
             <span className="flex flex-col ml-[14px]">
-                <h2 className="text-5 text-white font-medium">Константин Лебедев</h2>
+                <h2 className="text-5 text-white font-medium">{profile?.name}</h2>
                 <p className="text-[14px] text-[#C0C0C0] font-light">
                     Пройдено тестов: {completedTestCount}
                 </p>

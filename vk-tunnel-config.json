@@ -1,0 +1,9 @@
+{
+    "app_id": "51914500",
+    "endpoints": ["web", "mobile", "mvk"],
+    "insecure": 0,
+    "http-protocol": "https",
+    "ws-protocol": "wss",
+    "host": "localhost",
+    "port": 3000
+  }

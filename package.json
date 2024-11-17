@@ -7,14 +7,24 @@
         "dev": "vite",
         "build": "tsc -b && vite build",
         "lint": "eslint .",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "tunnel": "vk-tunnel",
+        "deploy": "vk-miniapps-deploy"
     },
     "dependencies": {
-        "@vkontakte/vk-bridge": "^2.15.1",
+        "@vitejs/plugin-basic-ssl": "^1.1.0",
+        "@vkontakte/vk-bridge": "^2.15.3",
         "@vkontakte/vk-mini-apps-router": "^1.5.0",
+        "@vkontakte/vk-miniapps-deploy": "^0.1.8",
+        "@vkontakte/vk-tunnel": "^0.2.2",
         "@vkontakte/vkui": "^6.7.2",
+        "axios": "^1.7.7",
+        "chart.js": "^4.4.6",
+        "google-auth-library": "^9.15.0",
+        "googleapis": "^144.0.0",
         "immer": "^10.1.1",
         "react": "^18.3.1",
+        "react-chartjs-2": "^5.2.0",
         "react-dom": "^18.3.1",
         "zustand": "^5.0.0"
     },

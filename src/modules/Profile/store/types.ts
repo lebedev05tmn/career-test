@@ -5,3 +5,18 @@ export type TCompletedTestState = {
 export type TCompletedTestActions = {
     incrementCounter: () => void;
 };
+
+type TUserProfile = {
+    name: string;
+    sex: string;
+    age: number;
+    img: string;
+};
+
+export type TUserState = {
+    profile: TUserProfile | null;
+};
+
+export type TUserActions = {
+    setProfile: (profile: TUserProfile) => void;
+};
