@@ -18,6 +18,37 @@ import type { TUserState } from './modules/Profile/store/types';
 const App: FC = () => {
     const setProfile = useUserStore((state) => state.setProfile);
 
+    const calculateAge = (bDate?: string): string | number => {
+        if (!bDate) {
+            return 'null';
+        }
+
+        const parts = bDate.split('.');
+        const day = parseInt(parts[0], 10);
+        const month = parseInt(parts[1], 10);
+        const year = parts.length === 3 ? parseInt(parts[2], 10) : null;
+
+        if (year === null) {
+            return 'null';
+        }
+
+        const birthDate = new Date(year, month - 1, day);
+
+        const currentDate = new Date();
+
+        let age = currentDate.getFullYear() - birthDate.getFullYear();
+        const monthDifference = currentDate.getMonth() - birthDate.getMonth();
+
+        if (
+            monthDifference < 0 ||
+            (monthDifference === 0 && currentDate.getDate() < birthDate.getDate())
+        ) {
+            age--;
+        }
+
+        return age;
+    };
+
     useEffect(() => {
         bridge
             .send('VKWebAppGetUserInfo')
@@ -25,7 +56,7 @@ const App: FC = () => {
                 const user: TUserState['profile'] = {
                     name: `${data.first_name} ${data.last_name}`,
                     sex: data.sex === 1 ? 'female' : 'male',
-                    age: data.bdate ? Number(data.bdate.split('.')[2]) : 0,
+                    age: calculateAge(data.bdate),
                     img: data.photo_200,
                 };
 

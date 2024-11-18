@@ -9,7 +9,7 @@ export type TCompletedTestActions = {
 type TUserProfile = {
     name: string;
     sex: string;
-    age: number;
+    age: number | string;
     img: string;
 };
 
