@@ -2,7 +2,7 @@ import { useEffect, useState, type FC } from 'react';
 import { Layout } from '../Layout';
 import { useParams } from '@vkontakte/vk-mini-apps-router';
 import { useDataTestStore, useTestStore } from './store';
-import { Button, Caption, Headline, Paragraph } from '@vkontakte/vkui';
+import { Button, Caption, Headline, Paragraph, useAppearance } from '@vkontakte/vkui';
 import { useComletedTestStore } from '../../../modules/Profile';
 import { Doughnut } from 'react-chartjs-2';
 import { ArcElement, Chart as ChartJS, Legend, Tooltip } from 'chart.js';
@@ -18,6 +18,7 @@ const Test: FC = () => {
     const increment = useComletedTestStore((state) => state.incrementCounter);
     const profile = useUserStore((state) => state.profile);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number | null>(1);
+    const appearance = useAppearance();
 
     useEffect(() => {
         if (params?.id) {
@@ -109,11 +110,12 @@ const Test: FC = () => {
             {currentQuestionIndex !== null &&
             completed[params?.id]?.length !== testData?.questions.length ? (
                 <div className="bg-[#232324] pt-2 pl-2">
-                    <Paragraph>
+                    <Paragraph className={appearance === 'light' ? 'text-white' : 'text-black'}>
                         Вопрос {currentQuestionIndex} из {testData?.questions.length}
                     </Paragraph>
                     <div className="flex flex-col items-center">
-                        <p className="mb-[27px] mt-[27px]">
+                        <p
+                            className={`mb-[27px] mt-[27px] ${appearance === 'light' ? 'text-white' : 'text-black'}`}>
                             {testData?.questions[currentQuestionIndex - 1]?.title ??
                                 'Что вы выберите?'}
                         </p>
