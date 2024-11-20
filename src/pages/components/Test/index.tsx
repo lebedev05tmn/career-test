@@ -110,12 +110,12 @@ const Test: FC = () => {
             {currentQuestionIndex !== null &&
             completed[params?.id]?.length !== testData?.questions.length ? (
                 <div className="bg-[#232324] pt-2 pl-2">
-                    <Paragraph className={appearance === 'light' ? 'text-white' : 'text-black'}>
+                    <Paragraph className={appearance === 'light' ? 'text-black' : 'text-white'}>
                         Вопрос {currentQuestionIndex} из {testData?.questions.length}
                     </Paragraph>
                     <div className="flex flex-col items-center">
                         <p
-                            className={`mb-[27px] mt-[27px] ${appearance === 'light' ? 'text-white' : 'text-black'}`}>
+                            className={`mb-[27px] mt-[27px] ${appearance === 'light' ? 'text-black' : 'text-white'}`}>
                             {testData?.questions[currentQuestionIndex - 1]?.title ??
                                 'Что вы выберите?'}
                         </p>
